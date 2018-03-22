@@ -145,7 +145,7 @@ footer a, footer a:link {
     <br>
     <br>
  <div class="container">
- 	<div class="wrapper">
+ <div class="wrapper" style="display:flex; align-items:center; justify-content:center; height:85vh;">
 	  <?php 
 	echo "<form action='control.php' class='login' name='autentification_form' method='post'>";
 

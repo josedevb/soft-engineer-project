@@ -46,7 +46,6 @@
 				if ( $Articulo == nologin ) {
 					include_once('nologin.php');
 				}
-
 				$Articulo = $_GET['art'];
 				if ( $Articulo == administrador ) {
 					include_once('administrador.php');
@@ -56,7 +55,6 @@
 				if ( $Articulo == registro ) {
 					include_once('registro.php');
 				}
-
 				$Articulo = $_GET['art'];
 				if ( $Articulo == salir ) {
 					include_once('salir.php');
@@ -66,32 +64,18 @@
 					include_once('errorlogin.php');
 				}
 				$Articulo = $_GET['art'];
-				if ( $Articulo == equipos ) {
-					include_once('equipos.php');
-				}
-				$Articulo = $_GET['art'];
 				if ( $Articulo == solicitudes ) {
 					include_once('solicitudes.php');
 				}
 
 				$Articulo = $_GET['art'];
-				if ( $Articulo == solicitud1 ) {
-					include_once('solicitud1.php');
+				if ( $Articulo == crearsolicitud ) {
+					include_once('crearsolicitud.php');
 				}
 
 				$Articulo = $_GET['art'];
-				if ( $Articulo == solicitud2 ) {
-					include_once('solicitud2.php');
-				}
-
-				$Articulo = $_GET['art'];
-				if ( $Articulo == solicitud3 ) {
-					include_once('solicitud3.php');
-				}
-
-				$Articulo = $_GET['art'];
-				if ( $Articulo == solicitud4 ) {
-					include_once('solicitud4.php');
+				if ( $Articulo == responderorden ) {
+					include_once('responderorden.php');
 				}
 
 				$Articulo = $_GET['art'];

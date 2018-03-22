@@ -6,82 +6,64 @@ error_reporting(E_ERROR | E_PARSE);
   $seleccion_buscar=$_POST['seleccion_buscar'];
   $buscar= $_POST['txtBuscar'];
 ?>
-<div class="container-fluid">
+<div class="container-fluid" style="height:85vh;">
   <h2 class="fgray">Ordenes</h2>
   
   <?php
   	$id = $_REQUEST['id'];
-    echo "<a href='index.php?art=crearsolicitud&id=$id'><div class='btn btn-success'>Crear nueva solicitud</div></a>";
+    echo "<a href='index.php?art=crearsolicitud&id=$id'>
+    <div style='margin-bottom:20px;' class='btn btn-success'>Crear nueva orden</div></a>";
 
-      $querybuscarU= $mysqli->query(
-          "SELECT
-            *
-            FROM ordenes
-            join usuario on usuario.id_persona = ordenes.id_usuario_emisor
-            where usuario.idusuario = $id ") or 
-          die ("<br> No se puede ejecutar query para buscar datos P".$mysqli->error);
-
-      $querybuscarA= $mysqli->query("
-        SELECT * 
-        FROM datospersonales 
-        join usuario 
-        on datospersonales.id_persona = usuario.id_persona 
-        where usuario.idusuario = $id ") or 
+    $querybuscarU= $mysqli->query("SELECT * FROM ordenes") or 
       die ("<br> No se puede ejecutar query para buscar datos P".$mysqli->error);
-
-      /*while (($fila=mysqli_fetch_array($querybuscarA)))
-      {
-        $cedula=$fila['cedula'];
-        $nombre=$fila['nombre'];
-        $apellido=$fila['apellido'];
-      }*/
 
     if (mysqli_num_rows($querybuscarU) > 0)
     {
       echo "<table class='w3-table bgreen fwhite1'>";
       echo "<tr>";
-      echo "<th> Cédula </th>";
-      echo "<th> Nombre </th>";
-      echo "<th> Apellido </th>";
-      echo "<th> Equipo </th>";
-      echo "<th> Fecha Inicial </th>";
-      echo "<th> Fecha Final </th>";
-      echo "<th> Motivo </th>";
+      echo "<th> Orden nº </th>";
+      echo "<th> Tipo </th>";
+      echo "<th> Usuario asignado </th>";
+      echo "<th> Mecanico asignado </th>";
+      echo "<th> Fecha reporte </th>";
+      echo "<th> Hora Reporte </th>";
+      echo "<th> Unidad equipo </th>";
       echo "<th> Estado </th>";
 
       //empieza a filtrar la tabla con el query
       while (($fila=mysqli_fetch_array($querybuscarU)))
       {
-        $usuario=$fila['usuario'];
-        $equipo=$fila['descripcion'];
-        $fechaini=$fila['fechaini'];
-        $fechafin=$fila['fechafin'];
-        $motivo=$fila['motivo'];
-        $estado=$fila['estado'];
+        $id_orden=$fila['id_orden'];
+        $tipo_mantenimiento=$fila['tipo_mantenimiento'];
+        $usuario_equipo=$fila['usuario_equipo'];
+        $mecanico_asignado=$fila['mecanico_asignado'];
+        $fecha_reporte=$fila['fecha_reporte'];
+        $hora_reporte=$fila['hora_reporte'];
+        $unidad_equipo=$fila['unidad_equipo'];
+        $estado_orden = $fila['estado_orden'];
 
           echo "<tr>";
-          //echo "<td> $iddatosp</td>";
-          echo "<td>$cedula</td>";
-          echo "<td>$nombre</td>";
-          echo "<td>$apellido</td>";
-          echo "<td>$equipo</td>";
-          echo "<td>$fechaini</td>";
-          echo "<td>$fechafin</td>";
-          echo "<td>$motivo</td>";
-          echo "<td>$estado</td>";
+          echo "<td>$id_orden</td>";
+          echo "<td>$tipo_mantenimiento</td>";
+          echo "<td>$usuario_equipo</td>";
+          echo "<td>$mecanico_asignado</td>";
+          echo "<td>$fecha_reporte</td>";
+          echo "<td>$hora_reporte</td>";
+          echo "<td>$unidad_equipo</td>";
+          echo "<td>$estado_orden</td>";
+          /*echo "<td>
+                  <a href='index.php?art=editar&id=$id'><button class='btn btn-success'>Aprobar </button></a>
+                  <a href='index.php?art=eliminar&id=$id'><button class='btn btn-danger'>Rechazar </button></a>
+            </td>";
+            */
       }
 
      echo "</tr>";
-    echo "<br>";
     echo "</tr>";
-
   echo "<table>";
     }
     else {
       echo "<h2>No tiene ordenes realizadas.</h2>";
     }
-
-
   ?>
-
-	</div>
+</div>

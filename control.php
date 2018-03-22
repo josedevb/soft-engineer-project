@@ -27,7 +27,7 @@
 					$_SESSION['usuario'] = $usuario;
 					$_SESSION['idusuario'] = $idusuario;
 					$_SESSION['cargo'] = $rolbd;
-					header("Location: index.php");
+					header("Location: index.php?art=administrador");
 				}
 			else {
 					// Inicio la sesión

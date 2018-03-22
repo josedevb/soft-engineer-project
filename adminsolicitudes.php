@@ -1,93 +1,66 @@
 <?php
 error_reporting(E_ERROR | E_PARSE);
-  include_once ("sesion.php");
+	include_once ("sesion.php");
   include_once('conexion.php');
   session_start();
   $seleccion_buscar=$_POST['seleccion_buscar'];
   $buscar= $_POST['txtBuscar'];
-  ?>
-<div class="container-fluid">
-
-<h2 class="fgray">Solicitudes</h2>
+?>
+<div class="container-fluid" style="height:85vh;">
+  <h2 class="fgray">Ordenes</h2>
+  
   <?php
-    $querybuscarU= $mysqli->query(
-      "SELECT datospersonales.cedula, datospersonales.nombre, datospersonales.apellido, usuario.idusuario, camiones.marca, solicitudes.fecha_comienzo, solicitudes.fecha_fin, estados.estado, solicitudes.comentario
-        FROM solicitudes
-        join usuario
-        on usuario.idusuario = solicitudes.id_persona
-        join estados
-        on solicitudes.id_estado = estados.id_estado
-        join camiones
-        on solicitudes.id_camion = camiones.id_camion
-        join datospersonales
-        on  datospersonales.id_persona = usuario.id_persona
-        where usuario.idusuario ") or 
-        die ("<br> No se puede ejecutar query para buscar datos P".$mysqli->error);
+  	$id = $_REQUEST['id'];
 
-
+    $querybuscarU= $mysqli->query("SELECT * FROM ordenes") or 
+      die ("<br> No se puede ejecutar query para buscar datos P".$mysqli->error);
 
     if (mysqli_num_rows($querybuscarU) > 0)
     {
       echo "<table class='w3-table bgreen fwhite1'>";
       echo "<tr>";
-      echo "<th> Cédula </th>";
-      echo "<th> Nombre </th>";
-      echo "<th> Apellido </th>";
-      echo "<th> Equipo </th>";
-      echo "<th> Fecha Inicial </th>";
-      echo "<th> Fecha Final </th>";
-      echo "<th> Motivo </th>";
+      echo "<th> Orden nº </th>";
+      echo "<th> Tipo </th>";
+      echo "<th> Usuario asignado </th>";
+      echo "<th> Mecanico asignado </th>";
+      echo "<th> Fecha reporte </th>";
+      echo "<th> Hora Reporte </th>";
+      echo "<th> Unidad equipo </th>";
       echo "<th> Estado </th>";
-      echo "<th> Acción </th>";
 
       //empieza a filtrar la tabla con el query
       while (($fila=mysqli_fetch_array($querybuscarU)))
       {
-        $id=$fila['idusuario'];
-        $cedula = $fila['cedula'];
-        $nombre = $fila['nombre'];
-        $apellido=$fila['apellido'];
-        $usuario=$fila['usuario'];
-        $equipo=$fila['descripcion'];
-        $fecha_comienzo=$fila['fecha_comienzo'];
-        $fecha_fin=$fila['fecha_fin'];
-        $motivo=$fila['motivo'];
-        $estado=$fila['estado'];
+        $id_orden=$fila['id_orden'];
+        $tipo_mantenimiento=$fila['tipo_mantenimiento'];
+        $usuario_equipo=$fila['usuario_equipo'];
+        $mecanico_asignado=$fila['mecanico_asignado'];
+        $fecha_reporte=$fila['fecha_reporte'];
+        $hora_reporte=$fila['hora_reporte'];
+        $unidad_equipo=$fila['unidad_equipo'];
+        $estado_orden = $fila['estado_orden'];
 
           echo "<tr>";
-          //echo "<td> $iddatosp</td>";
-          echo "<td>$cedula</td>";
-          echo "<td>$nombre</td>";
-          echo "<td>$apellido</td>";
-          echo "<td>$equipo</td>";
-          echo "<td>$fecha_comienzo</td>";
-          echo "<td>$fecha_fin</td>";
-          echo "<td>$motivo</td>";
-          echo "<td>$estado</td>";
+          echo "<td>$id_orden</td>";
+          echo "<td>$tipo_mantenimiento</td>";
+          echo "<td>$usuario_equipo</td>";
+          echo "<td>$mecanico_asignado</td>";
+          echo "<td>$fecha_reporte</td>";
+          echo "<td>$hora_reporte</td>";
+          echo "<td>$unidad_equipo</td>";
+          echo "<td>$estado_orden</td>";
           echo "<td>
-                  <a href='index.php?art=aprobar&id=$id'><button class='btn btn-success'>Aprobar </button></a>
-                  <a href='index.php?art=rechazar&id=$id'><button class='btn btn-danger'>Rechazar </button></a>
-            </td>";
+            <a href='index.php?art=responderorden&id=$id_orden'><button class='btn btn-success'>Responder</button></a>
+          </td>";
+            
       }
 
      echo "</tr>";
-    echo "<br>";
     echo "</tr>";
-
   echo "<table>";
     }
-
-
+    else {
+      echo "<h2>No tiene ordenes realizadas.</h2>";
+    }
   ?>
-
-  </div>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
+</div>

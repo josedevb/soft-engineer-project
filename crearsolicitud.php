@@ -1,75 +1,194 @@
 <?php 
-include_once ('../models/sesion.php');
-include_once('../models/conexion.php');
-
-$id = $_SESSION['idusuario'];
-$query1 = $mysqli->query("SELECT * FROM equipos where idequipo=1 ");
-	while (($fila=mysqli_fetch_array($query1)))
-	{
-		$idequipo= $fila['idequipo'];
-		$cantidad= $fila['cantidad'];ÑQ"ZÑ"!eñ
-		$disponible= $fila['disponible'];
-		$descripcion= $fila['descripcion'];
-	}
-
-    $motivo = $_POST['descripcion'];
-    $fechaini = $_POST['fechaini'];
-    $fechafin = $_POST['fechafin'];
-
- ?>
-
-<div class="row clearfix" style="height: 5vh"></div>
-
+  include_once ('sesion.php');
+  include_once('conexion.php');
+  $id = $_SESSION['idusuario'];
+?>
 <div class="container-fluid">
-    <div class="row">
-    <div class="col-md-7">
-        <img src="image/op1.JPEG" class="img-responsive" style="display:block; margin-top: 10%"  alt="">
-    </div>
-
-    <div class="col-md-4" >
-        <h3 style="color: black">Servidor HP ProLiant ML310e Gen8 v2</h3>
-        <p style="color: black" style="font-size: 10%">Servidor HP ProLiant ML310e Gen8 v2 posee una alta gama de virtudes, el mejor servidor HP integrado a tu departamento.</p>
-        <h3 style="color: black">Detalles</h3>
-        <ul style="color: black;margin: 2px;padding: 2px;">
-                <li style="color: black;margin: 5px;padding: 5px;" >Cantidad Disponible: <?php echo "$cantidad" ?></li>
-            <li style="color: black;margin: 10px;padding: 10px;" >
-            <?php 
-            if ($disponible == 1 && $cantidad > 0) {
-                echo "<span style='color:green;'>Habilitado";
-                echo "</li>";
-                echo "<form action='' name='solicitud' method='post'>";
-            echo "<li>Fecha Inicio: <input type='date' required class='form-control' id='fechaini' name='fechaini' ></input></li><br>";
-            echo "<li>Fecha Fin:<input type='date' required class='form-control' id='fechafin' name='fechafin' ></input></li><br>";
-            echo "<list style='color: black;margin: 10px;padding: 10px;' > <textarea placeholder='Indique sus razones' required cols='40' rows='4' id='descripcion' name='descripcion'></textarea></li>"; 
-                
-                if ( isset($_POST['BtnEnviar']) )
-                    {
-        $query2 = $mysqli->query("INSERT INTO solicitudes (idsolicitud, idusuario, idequipo, idestado, fechaini, fechafin, vencido, motivo) values (null, $id, 1, 1, '$fechaini', '$fechafin', 0, '$motivo') ");
-
-        $query3 = $mysqli->query("UPDATE equipos SET cantidad = cantidad - 1 where idequipo = 1 ");
-
-            echo "<li>
-                            <h3 style='color:black'> Su Solicitud ha sido enviada en breve sera atendida</h3>
-                        </li>";
-                        echo "</form>";
-                    }else{
-
-                    echo "<li><input type='submit' id='BtnEnviar' name='BtnEnviar' value='Hacer Solicitud' class='btn btn-primary'></input></li>";
-                    echo "</form>";
-                    }
-            }else
-            {
-                echo "<span style='color:red;'>Deshabilitado";
-                echo "</li>";
-            echo "<li>";
-            echo "<input type='submit' disabled id='BtnEnviar' class='btn btn-primary' value='Hacer Solicitud'></input>
-            </li>";
-            echo "</form>";
-            }
-                ?>
-            </ul>
+  <div class="formBox">
+    <form name="createorder_form" action="createorder.php" method="post" class="form">
+      <div class="row">
+        <div class="col-sm-12">
+          <h2>Nueva orden</h2>
         </div>
-    </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="inputBox focus">
+            <div class="inputText ">De</div>
+            <input type="text" name="usuario_emisor" value="OPERACIONES" disabled class="input">
+          </div>
+        </div>
+
+        <div class="col-sm-6">
+          <div class="inputBox focus">
+            <div class="inputText">Para</div>
+            <input type="text" name="usuario_receptor" value="MANTENIMIENTO" disabled class="input">
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="inputBox focus" style="display:flex;">
+            <div class="inputText">Tipo de mantenimiento</div>
+            <div class="radio-box">
+              <input type="radio" checked name="tipoMantenimiento" value="preventivo"> Preventivo<br>
+              <input type="radio" name="tipoMantenimiento" value="predictivo"> Predictivo<br>
+              <input type="radio" name="tipoMantenimiento" value="correctivo"> Correctivo
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-4">
+          <div class="inputBox focus">
+            <div class="inputText">Usuario del equipo</div>
+            <input type="text" name="usuario_equipo" placeholder="Ingrese el nombre" required class="input">
+          </div>
+        </div>
+
+        <div class="col-sm-4">
+          <div class="inputBox focus">
+            <div class="inputText">Mecanico asignado</div>
+            <input type="text" name="mecanico_asignado" placeholder="Ingrese el nombre" required class="input">
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="inputBox focus">
+            <div class="inputText ">Fecha reporte</div>
+            <input type="date" required name="fecha_reporte" class="input">
+          </div>
+        </div>
+
+        <div class="col-sm-4">
+          <div class="inputBox focus">
+            <div class="inputText">Hora del reporte</div>
+            <input type="time" placeholder="HH:mm" required name="hora_reporte" class="input">
+          </div>
+        </div>
+
+        <div class="col-sm-4">
+          <div class="inputBox focus">
+            <div class="inputText">Fecha inicio</div>
+            <input type="date" name="fecha_inicio" class="input">
+          </div>
+        </div>
+
+        <div class="col-sm-4">
+          <div class="inputBox focus">
+            <div class="inputText">Hora inicio</div>
+            <input type="time" required placeholder="HH:mm" name="hora_inicio" class="input">
+          </div>
+        </div>
+
+        <div class="col-sm-4">
+          <div class="inputBox focus">
+            <div class="inputText">Fecha culminación</div>
+            <input type="date" required name="fecha_culminacion" class="input">
+          </div>
+        </div>
+
+        <div class="col-sm-4">
+          <div class="inputBox focus">
+            <div class="inputText">Hora culminación</div>
+            <input type="time" required name="hora_culminacion" class="input">
+          </div>
+        </div>
+
+        <div class="col-sm-4">
+          <div class="inputBox focus">
+            <div class="inputText">KM</div>
+            <input type="number" required name="km" class="input">
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="title-row">
+          <h3>CARACTERISTICAS DEL EQUIPO</h3>
+        </div>
+        <div class="col-sm-4">
+          <div class="inputBox focus">
+            <div class="inputText">Unidad</div>
+            <input type="text" required placeholder="Ingrese unidad" name="unidad_equipo" class="input">
+          </div>
+        </div>
+
+        <div class="col-sm-4">
+          <div class="inputBox focus">
+            <div class="inputText">Placa</div>
+            <input type="text" placeholder="Ingrese placa" required name="placa_equipo" class="input">
+          </div>
+        </div>
+
+        <div class="col-sm-4">
+          <div class="inputBox focus">
+            <div class="inputText">Ultima actividad realizada</div>
+            <input type="text" placeholder="Ingrese actividad" required name="ultima_actividad" class="input">
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="title-row">
+          <h3>TALLER EXTERNO</h3>
+        </div>
+
+        <div class="col-sm-3">
+          <div class="inputBox focus">
+            <div class="inputText">Nombre del taller</div>
+            <input type="text" placeholder="Indique el nombre" required name="taller_externo" class="input">
+          </div>
+        </div>
+
+        <div class="col-sm-3">
+          <div class="inputBox focus">
+            <div class="inputText">Fecha de inicio</div>
+            <input type="date" required name="fecha_inicio_taller" class="input">
+          </div>
+        </div>
+
+        <div class="col-sm-3">
+          <div class="inputBox focus">
+            <div class="inputText">Fecha culminación</div>
+            <input type="date" required name="fecha_culminacion_taller" class="input">
+          </div>
+        </div>
+
+        <div class="col-sm-3">
+          <div class="inputBox focus">
+            <div class="inputText">Hora</div>
+            <input type="time" required placeholder="HH:mm" name="hora_taller" class="input">
+          </div>
+        </div>
+
+        <div class="col-sm-3">
+          <div class="inputBox focus">
+            <div class="inputText">Garantia</div>
+            <input type="text" required name="garantia" class="input">
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="inputBox focus">
+            <div class="inputText">Descripción de la falla</div>
+            <textarea required name="descripcion_falla" class="input"></textarea>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-12">
+          <input type="submit" name="" class="button" value="Crear orden">
+        </div>
+      </div>
+    </form>
+  </div>
 </div>
 
 <div class="row clearfix" style="height: 5vh"></div>

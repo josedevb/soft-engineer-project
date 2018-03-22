@@ -140,17 +140,12 @@ footer a, footer a:link {
   color: #fff;
   text-decoration: none;
 }
-
-    </style>
-    <br>
-    <br>
+</style>
  <div class="container">
- 	<div class="wrapper">
+ 	<div class="wrapper" style="display:flex; align-items:center; justify-content:center; height:85vh;">
 	  <?php
-	echo "<form action='control.php' class='login' name='autentification_form' method='post'>";
-
-
-   	  echo "  <p class='title'>Ingrese sus datos</p> ";
+	  echo "<form action='control.php' class='login' name='autentification_form' method='post'>";
+    echo "  <p class='title'>Ingrese sus datos</p> ";
 	  echo "  <input name='usuario' required type='text' id='usuario' placeholder='Usuario' value='' autofocus/>";
 	  echo "  <i class='fa fa-user'></i>";
 	  echo "  <input type='password' required name='clave' type='password' id='clave' placeholder='Contraseña' />";
@@ -159,13 +154,8 @@ footer a, footer a:link {
 	  echo "    <i class='spinner'></i>";
 	  echo "    <span class='state'>Enviar</span>";
 	  echo "  </button>";
- 	echo " </form> ";
+ 	  echo " </form> ";
 	 ?>
 	</div>
-
-	   <script src="../js/index.js"></script>
-
-
+	   <script src="js/index.js"></script>
  </div>
-
- <div class="clearfix" style="height: 3vh;"> </div>
