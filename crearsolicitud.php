@@ -7,7 +7,7 @@ $query1 = $mysqli->query("SELECT * FROM equipos where idequipo=1 ");
 	while (($fila=mysqli_fetch_array($query1)))
 	{
 		$idequipo= $fila['idequipo'];
-		$cantidad= $fila['cantidad'];
+		$cantidad= $fila['cantidad'];ÑQ"ZÑ"!eñ
 		$disponible= $fila['disponible'];
 		$descripcion= $fila['descripcion'];
 	}
