@@ -12,6 +12,7 @@
         </div>
       </div>
 
+<<<<<<< Updated upstream
       <div class="row">
         <div class="col-sm-6">
           <div class="inputBox focus">
@@ -19,6 +20,17 @@
             <input type="text" name="usuario_emisor" value="OPERACIONES" disabled class="input">
           </div>
         </div>
+=======
+$id = $_SESSION['idusuario'];
+$query1 = $mysqli->query("SELECT * FROM equipos where idequipo=1 ");
+	while (($fila=mysqli_fetch_array($query1)))
+	{
+		$idequipo= $fila['idequipo'];
+		$cantidad= $fila['cantidad'];
+		$disponible= $fila['disponible'];
+		$descripcion= $fila['descripcion'];
+	}
+>>>>>>> Stashed changes
 
         <div class="col-sm-6">
           <div class="inputBox focus">
