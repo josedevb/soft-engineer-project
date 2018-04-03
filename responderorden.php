@@ -741,7 +741,15 @@
   </div>
 </div>
 
+
 <script>
+
+  $(document).ready(function(){
+    $('.form-control:first-child').on('change', function(e) {
+      var cantidad = $(this).parents("tr").find("td").eq(1).val();
+      console.log($('input[name=cant1]').val())
+    })
+  });
 </script>
 
 <div class="row clearfix" style="height: 5vh"></div>
