@@ -1,46 +1,46 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.7
--- https://www.phpmyadmin.net/
+-- version 4.0.9
+-- http://www.phpmyadmin.net
 --
--- Servidor: localhost
--- Tiempo de generación: 22-03-2018 a las 22:08:14
--- Versión del servidor: 10.1.30-MariaDB
--- Versión de PHP: 7.2.2
+-- Host: localhost
+-- Generation Time: Apr 04, 2018 at 01:13 am
+-- Server version: 5.6.14
+-- PHP Version: 5.5.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+/*!40101 SET NAMES utf8 */;
 
 --
--- Base de datos: `urbe`
+-- Database: `urbe`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `datospersonales`
+-- Table structure for table `datospersonales`
 --
 
-CREATE TABLE `datospersonales` (
-  `id_persona` int(8) NOT NULL,
+CREATE TABLE IF NOT EXISTS `datospersonales` (
+  `id_persona` int(8) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(30) NOT NULL,
   `apellido` varchar(50) NOT NULL,
   `correo` varchar(30) NOT NULL,
   `telefono` varchar(11) NOT NULL,
   `cedula` int(11) NOT NULL,
   `fecha` varchar(20) NOT NULL,
-  `genero` varchar(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `genero` varchar(10) NOT NULL,
+  PRIMARY KEY (`id_persona`),
+  UNIQUE KEY `correo` (`correo`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
--- Volcado de datos para la tabla `datospersonales`
+-- Dumping data for table `datospersonales`
 --
 
 INSERT INTO `datospersonales` (`id_persona`, `nombre`, `apellido`, `correo`, `telefono`, `cedula`, `fecha`, `genero`) VALUES
@@ -50,11 +50,11 @@ INSERT INTO `datospersonales` (`id_persona`, `nombre`, `apellido`, `correo`, `te
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `ordenes`
+-- Table structure for table `ordenes`
 --
 
-CREATE TABLE `ordenes` (
-  `id_orden` int(20) NOT NULL,
+CREATE TABLE IF NOT EXISTS `ordenes` (
+  `id_orden` int(20) NOT NULL AUTO_INCREMENT,
   `id_usuario_emisor` int(20) NOT NULL,
   `id_usuario_receptor` int(20) NOT NULL,
   `tipo_mantenimiento` varchar(20) NOT NULL,
@@ -76,11 +76,12 @@ CREATE TABLE `ordenes` (
   `hora_taller` varchar(20) NOT NULL,
   `garantia` varchar(20) NOT NULL,
   `descripcion_falla` varchar(200) NOT NULL,
-  `estado_orden` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `estado_orden` varchar(20) NOT NULL,
+  PRIMARY KEY (`id_orden`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
--- Volcado de datos para la tabla `ordenes`
+-- Dumping data for table `ordenes`
 --
 
 INSERT INTO `ordenes` (`id_orden`, `id_usuario_emisor`, `id_usuario_receptor`, `tipo_mantenimiento`, `usuario_equipo`, `mecanico_asignado`, `fecha_reporte`, `hora_reporte`, `fecha_inicio`, `hora_inicio`, `fecha_culminacion`, `hora_culminacion`, `km`, `unidad_equipo`, `placa_equipo`, `ultima_actividad`, `taller_externo`, `fecha_inicio_taller`, `fecha_culminacion_taller`, `hora_taller`, `garantia`, `descripcion_falla`, `estado_orden`) VALUES
@@ -90,11 +91,11 @@ INSERT INTO `ordenes` (`id_orden`, `id_usuario_emisor`, `id_usuario_receptor`, `
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `reparaciones`
+-- Table structure for table `reparaciones`
 --
 
-CREATE TABLE `reparaciones` (
-  `id_reparacion` int(100) NOT NULL,
+CREATE TABLE IF NOT EXISTS `reparaciones` (
+  `id_reparacion` int(100) NOT NULL AUTO_INCREMENT,
   `cantidad` int(100) NOT NULL,
   `codigo` varchar(100) NOT NULL,
   `descripcion` varchar(100) NOT NULL,
@@ -102,16 +103,17 @@ CREATE TABLE `reparaciones` (
   `req_mant_no` varchar(100) NOT NULL,
   `precio_unit` int(50) NOT NULL,
   `precio_total` int(100) NOT NULL,
-  `id_orden` int(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `id_orden` int(100) NOT NULL,
+  PRIMARY KEY (`id_reparacion`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `repuestos`
+-- Table structure for table `repuestos`
 --
 
-CREATE TABLE `repuestos` (
+CREATE TABLE IF NOT EXISTS `repuestos` (
   `id_repuesto` int(100) NOT NULL,
   `cantidad` int(100) NOT NULL,
   `codigo` int(100) NOT NULL,
@@ -124,94 +126,39 @@ CREATE TABLE `repuestos` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `respuesta`
+-- Table structure for table `respuesta`
 --
 
-CREATE TABLE `respuesta` (
+CREATE TABLE IF NOT EXISTS `respuesta` (
   `id_respuesta` int(11) NOT NULL,
   `id_orden` int(11) NOT NULL,
-  `observacion` varchar(200) NOT NULL
+  `observacion` varchar(200) NOT NULL,
+  `hora_respuesta` int(50) NOT NULL,
+  `fecha_respuesta` int(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `usuario`
+-- Table structure for table `usuario`
 --
 
-CREATE TABLE `usuario` (
-  `idusuario` int(8) NOT NULL,
+CREATE TABLE IF NOT EXISTS `usuario` (
+  `idusuario` int(8) NOT NULL AUTO_INCREMENT,
   `usuario` varchar(30) NOT NULL,
   `clave` varchar(30) NOT NULL,
   `cargo` int(1) NOT NULL,
-  `id_persona` int(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `id_persona` int(10) NOT NULL,
+  PRIMARY KEY (`idusuario`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
--- Volcado de datos para la tabla `usuario`
+-- Dumping data for table `usuario`
 --
 
 INSERT INTO `usuario` (`idusuario`, `usuario`, `clave`, `cargo`, `id_persona`) VALUES
 (1, 'operaciones', '1234', 2, 1),
 (2, 'mantenimiento', '1234', 1, 2);
-
---
--- Índices para tablas volcadas
---
-
---
--- Indices de la tabla `datospersonales`
---
-ALTER TABLE `datospersonales`
-  ADD PRIMARY KEY (`id_persona`),
-  ADD UNIQUE KEY `correo` (`correo`);
-
---
--- Indices de la tabla `ordenes`
---
-ALTER TABLE `ordenes`
-  ADD PRIMARY KEY (`id_orden`);
-
---
--- Indices de la tabla `reparaciones`
---
-ALTER TABLE `reparaciones`
-  ADD PRIMARY KEY (`id_reparacion`);
-
---
--- Indices de la tabla `usuario`
---
-ALTER TABLE `usuario`
-  ADD PRIMARY KEY (`idusuario`);
-
---
--- AUTO_INCREMENT de las tablas volcadas
---
-
---
--- AUTO_INCREMENT de la tabla `datospersonales`
---
-ALTER TABLE `datospersonales`
-  MODIFY `id_persona` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT de la tabla `ordenes`
---
-ALTER TABLE `ordenes`
-  MODIFY `id_orden` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT de la tabla `reparaciones`
---
-ALTER TABLE `reparaciones`
-  MODIFY `id_reparacion` int(100) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `usuario`
---
-ALTER TABLE `usuario`
-  MODIFY `idusuario` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

@@ -13,7 +13,7 @@
   $fecha_culminacion= $_POST['fecha_culminacion'];
   $hora_culminacion= $_POST['hora_culminacion'];
   $km= $_POST['km'];
-  $unidad_equipo= $_POST['hora_culminacion'];
+  $unidad_equipo= $_POST['unidad_equipo'];
   $placa_equipo= $_POST['placa_equipo'];
   $ultima_actividad= $_POST['ultima_actividad'];
   $taller_externo= $_POST['taller_externo'];
