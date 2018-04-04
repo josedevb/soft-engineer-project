@@ -99,7 +99,7 @@
                     <input type="number" min="0" name='precio_unitario1' placeholder='Precio unitario' class="form-control"/>
                   </td>
                   <td>
-                    <input type="number" min="0" name='precio_total1'disabled placeholder='Precio total' class="form-control"/>
+                    <input type="number" min="0" name='precio_total1' readonly placeholder='Precio total' class="form-control"/>
                   </td>
                 </tr>
                 <tr id='addr2'>
@@ -125,7 +125,7 @@
                     <input type="number" min="0" name='precio_unitario2' placeholder='Precio unitario' class="form-control"/>
                   </td>
                   <td>
-                    <input type="number" min="0" name='precio_total2'disabled placeholder='Precio total' class="form-control"/>
+                    <input type="number" min="0" name='precio_total2' readonly placeholder='Precio total' class="form-control"/>
                   </td>
                 </tr>
                 <tr id='addr3'>
@@ -151,7 +151,7 @@
                     <input type="number" min="0" name='precio_unitario3' placeholder='Precio unitario' class="form-control"/>
                   </td>
                   <td>
-                    <input type="number" min="0" name='precio_total3'disabled placeholder='Precio total' class="form-control"/>
+                    <input type="number" min="0" name='precio_total3' readonly placeholder='Precio total' class="form-control"/>
                   </td>
                 </tr>
                 <tr id='addr4'>
@@ -177,7 +177,7 @@
                     <input type="number" min="0" name='precio_unitario4' placeholder='Precio unitario' class="form-control"/>
                   </td>
                   <td>
-                    <input type="number" min="0" name='precio_total4'disabled placeholder='Precio total' class="form-control"/>
+                    <input type="number" min="0" name='precio_total4' readonly placeholder='Precio total' class="form-control"/>
                   </td>
                 </tr>
                 <tr id='addr5'>
@@ -203,7 +203,7 @@
                     <input type="number" min="0" name='precio_unitario5' placeholder='Precio unitario' class="form-control"/>
                   </td>
                   <td>
-                    <input type="number" min="0" name='precio_total5'disabled placeholder='Precio total' class="form-control"/>
+                    <input type="number" min="0" name='precio_total5' readonly placeholder='Precio total' class="form-control"/>
                   </td>
                 </tr>
                 <tr id='addr6'>
@@ -217,7 +217,7 @@
                     <h6>Total</h6>
                   </td>
                   <td>
-                    <input type="number" min="0" name='total_repuestos' disabled placeholder='Precio total' class="form-control"/>
+                    <input type="number" min="0" name='total_repuestos' readonly placeholder='Precio total' class="form-control"/>
                   </td>
                 </tr>
               </tbody>
@@ -285,7 +285,7 @@
                     <input type="number" name='precio_unitario21' placeholder='Precio unitario' class="form-control"/>
                   </td>
                   <td>
-                    <input type="number" min="0" name='precio_total21'disabled placeholder='Precio total' class="form-control"/>
+                    <input type="number" min="0" name='precio_total21' readonly placeholder='Precio total' class="form-control"/>
                   </td>
                 </tr>
                 <tr id='addr2'>
@@ -311,7 +311,7 @@
                     <input type="number" min="0" name='precio_unitario22' placeholder='Precio unitario' class="form-control"/>
                   </td>
                   <td>
-                    <input type="number" min="0" name='precio_total22'disabled placeholder='Precio total' class="form-control"/>
+                    <input type="number" min="0" name='precio_total22' readonly placeholder='Precio total' class="form-control"/>
                   </td>
                 </tr>
                 <tr id='addr3'>
@@ -337,7 +337,7 @@
                     <input type="number" min="0" name='precio_unitario23' placeholder='Precio unitario' class="form-control"/>
                   </td>
                   <td>
-                    <input type="number" min="0" name='precio_total23'disabled placeholder='Precio total' class="form-control"/>
+                    <input type="number" min="0" name='precio_total23' readonly placeholder='Precio total' class="form-control"/>
                   </td>
                 </tr>
                 <tr id='addr4'>
@@ -363,7 +363,7 @@
                     <input type="number" min="0" name='precio_unitario24' placeholder='Precio unitario' class="form-control"/>
                   </td>
                   <td>
-                    <input type="number" min="0" name='precio_total24'disabled placeholder='Precio total' class="form-control"/>
+                    <input type="number" min="0" name='precio_total24' readonly placeholder='Precio total' class="form-control"/>
                   </td>
                 </tr>
                 <tr id='addr5'>
@@ -389,7 +389,7 @@
                     <input type="number" min="0" name='precio_unitario25' placeholder='Precio unitario' class="form-control"/>
                   </td>
                   <td>
-                    <input type="number" min="0" name='precio_total25'disabled placeholder='Precio total' class="form-control"/>
+                    <input type="number" min="0" name='precio_total25' readonly placeholder='Precio total' class="form-control"/>
                   </td>
                 </tr>
                 <tr id='addr6'>
@@ -403,7 +403,7 @@
                     <h6>Total</h6>
                   </td>
                   <td>
-                    <input type="number" min="0" name='total_reparaciones' disabled placeholder='Precio total' class="form-control"/>
+                    <input type="number" min="0" name='total_reparaciones' readonly placeholder='Precio total' class="form-control"/>
                   </td>
                 </tr>
               </tbody>

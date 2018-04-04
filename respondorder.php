@@ -16,7 +16,7 @@
             id_orden, )
           values (null, '$reparacion' $id_orden)
         "
-      );
+      ) or die($mysqli->error);
     }
   
   for($i = 5; $i <= 5; $i++) {
@@ -40,7 +40,7 @@
             id_orden )
           values (null, $cant, '$code', '$desc', '$proce', '$reqmant', $precio_unitario, $precio_total, $id_orden)
         "
-      );
+      ) or die($mysqli->error);
     }
     if($_POST['cant_reparaciones'.$i]) {
       $cant = $_POST['cant_reparaciones'.$i];
@@ -62,7 +62,7 @@
             id_orden )
           values (null, $cant, '$code', '$desc', '$proce', '$reqmant', $precio_unitario, $precio_total, $id_orden)
         "
-      );
+      )  or die($mysqli->error);
     }
   }
 
@@ -87,7 +87,7 @@
         date('H:i:s')
       )
     "
-  );
+  ) or die($mysqli->error);
 
   $mysqli->query("UPDATE ordenes set estado_orden = 'Aprobado' where id_orden=$id_orden");
 
