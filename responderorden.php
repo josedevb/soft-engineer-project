@@ -17,22 +17,22 @@
       <div class="row">
         <div class="col-sm-6">
           <div class="inputBox focus">
-            <div class="inputText ">Reparaciones realizadas</div>
-            <input type="text" placeholder="1" name="usuario_emisor" value="" class="input">
-            <input type="text" placeholder="2" name="usuario_receptor" value="" class="input">
-            <input type="text" placeholder="3" name="usuario_receptor" value="" class="input">
-            <input type="text" placeholder="4" name="usuario_receptor" value="" class="input">
-            <input type="text" placeholder="5" name="usuario_receptor" value="" class="input">
+            <div class="inputText">Reparaciones realizadas</div>
+            <input type="text" placeholder="1" name="reparacion1" value="" class="input">
+            <input type="text" placeholder="2" name="reparacion2" value="" class="input">
+            <input type="text" placeholder="3" name="reparacion3" value="" class="input">
+            <input type="text" placeholder="4" name="reparacion4" value="" class="input">
+            <input type="text" placeholder="5" name="reparacion5" value="" class="input">
           </div>
         </div>
         <div class="col-sm-6">
           <div class="inputBox focus">
-            <div class="inputText ">Reparaciones realizadas</div>
-            <input type="text" placeholder="6" name="usuario_emisor" value="" class="input">
-            <input type="text" placeholder="7" name="usuario_receptor" value="" class="input">
-            <input type="text" placeholder="8" name="usuario_receptor" value="" class="input">
-            <input type="text" placeholder="9" name="usuario_receptor" value="" class="input">
-            <input type="text" placeholder="10" name="usuario_receptor" value="" class="input">
+            <div class="inputText">Reparaciones realizadas</div>
+            <input type="text" placeholder="6" name="reparacion6" value="" class="input">
+            <input type="text" placeholder="7" name="reparacion7" value="" class="input">
+            <input type="text" placeholder="8" name="reparacion8" value="" class="input">
+            <input type="text" placeholder="9" name="reparacion9" value="" class="input">
+            <input type="text" placeholder="10" name="reparacion10" value="" class="input">
           </div>
         </div>
       </div>
@@ -81,7 +81,7 @@
                   1
                   </td>
                   <td>
-                    <input type="number" min="0" name='cant1'  placeholder='Cantidad' class="form-control"/>
+                    <input type="number" min="0" name='cant_repuesto1'  placeholder='Cantidad' class="form-control"/>
                   </td>
                   <td>
                     <input type="text" name='code1' placeholder='Código' class="form-control"/>
@@ -96,10 +96,10 @@
                     <input type="text" name='reqmant1' placeholder='Req Mant.' class="form-control"/>
                   </td>
                   <td>
-                    <input type="number" min="0" name='preciou1' placeholder='Precio unitario' class="form-control"/>
+                    <input type="number" min="0" name='precio_unitario1' placeholder='Precio unitario' class="form-control"/>
                   </td>
                   <td>
-                    <input type="number" min="0" name='preciot1'disabled placeholder='Precio total' class="form-control"/>
+                    <input type="number" min="0" name='precio_total1'disabled placeholder='Precio total' class="form-control"/>
                   </td>
                 </tr>
                 <tr id='addr2'>
@@ -107,7 +107,7 @@
                   2
                   </td>
                   <td>
-                    <input type="number" min="0" name='cant2'  placeholder='Cantidad' class="form-control"/>
+                    <input type="number" min="0" name='cant_repuesto2'  placeholder='Cantidad' class="form-control"/>
                   </td>
                   <td>
                     <input type="text" name='code2' placeholder='Código' class="form-control"/>
@@ -122,10 +122,10 @@
                     <input type="text" name='reqmant2' placeholder='Req Mant.' class="form-control"/>
                   </td>
                   <td>
-                    <input type="number" min="0" name='preciou2' placeholder='Precio unitario' class="form-control"/>
+                    <input type="number" min="0" name='precio_unitario2' placeholder='Precio unitario' class="form-control"/>
                   </td>
                   <td>
-                    <input type="number" min="0" name='preciot2'disabled placeholder='Precio total' class="form-control"/>
+                    <input type="number" min="0" name='precio_total2'disabled placeholder='Precio total' class="form-control"/>
                   </td>
                 </tr>
                 <tr id='addr3'>
@@ -133,7 +133,7 @@
                   3
                   </td>
                   <td>
-                    <input type="number" min="0" name='cant3'  placeholder='Cantidad' class="form-control"/>
+                    <input type="number" min="0" name='cant_repuesto3'  placeholder='Cantidad' class="form-control"/>
                   </td>
                   <td>
                     <input type="text" name='code3' placeholder='Código' class="form-control"/>
@@ -148,10 +148,10 @@
                     <input type="text" name='reqmant3' placeholder='Req Mant.' class="form-control"/>
                   </td>
                   <td>
-                    <input type="number" min="0" name='preciou3' placeholder='Precio unitario' class="form-control"/>
+                    <input type="number" min="0" name='precio_unitario3' placeholder='Precio unitario' class="form-control"/>
                   </td>
                   <td>
-                    <input type="number" min="0" name='preciot3'disabled placeholder='Precio total' class="form-control"/>
+                    <input type="number" min="0" name='precio_total3'disabled placeholder='Precio total' class="form-control"/>
                   </td>
                 </tr>
                 <tr id='addr4'>
@@ -159,7 +159,7 @@
                   4
                   </td>
                   <td>
-                    <input type="number" min="0" name='cant4'  placeholder='Cantidad' class="form-control"/>
+                    <input type="number" min="0" name='cant_repuesto4'  placeholder='Cantidad' class="form-control"/>
                   </td>
                   <td>
                     <input type="text" name='code4' placeholder='Código' class="form-control"/>
@@ -174,10 +174,10 @@
                     <input type="text" name='reqmant4' placeholder='Req Mant.' class="form-control"/>
                   </td>
                   <td>
-                    <input type="number" min="0" name='preciou4' placeholder='Precio unitario' class="form-control"/>
+                    <input type="number" min="0" name='precio_unitario4' placeholder='Precio unitario' class="form-control"/>
                   </td>
                   <td>
-                    <input type="number" min="0" name='preciot4'disabled placeholder='Precio total' class="form-control"/>
+                    <input type="number" min="0" name='precio_total4'disabled placeholder='Precio total' class="form-control"/>
                   </td>
                 </tr>
                 <tr id='addr5'>
@@ -185,7 +185,7 @@
                   5
                   </td>
                   <td>
-                    <input type="number" min="0" name='cant5'  placeholder='Cantidad' class="form-control"/>
+                    <input type="number" min="0" name='cant_repuesto5'  placeholder='Cantidad' class="form-control"/>
                   </td>
                   <td>
                     <input type="text" name='code5' placeholder='Código' class="form-control"/>
@@ -200,10 +200,10 @@
                     <input type="text" name='reqmant5' placeholder='Req Mant.' class="form-control"/>
                   </td>
                   <td>
-                    <input type="number" min="0" name='preciou5' placeholder='Precio unitario' class="form-control"/>
+                    <input type="number" min="0" name='precio_unitario5' placeholder='Precio unitario' class="form-control"/>
                   </td>
                   <td>
-                    <input type="number" min="0" name='preciot5'disabled placeholder='Precio total' class="form-control"/>
+                    <input type="number" min="0" name='precio_total5'disabled placeholder='Precio total' class="form-control"/>
                   </td>
                 </tr>
                 <tr id='addr6'>
@@ -217,64 +217,13 @@
                     <h6>Total</h6>
                   </td>
                   <td>
-                    <input type="number" min="0" name='total' disabled placeholder='Precio total' class="form-control"/>
+                    <input type="number" min="0" name='total_repuestos' disabled placeholder='Precio total' class="form-control"/>
                   </td>
                 </tr>
               </tbody>
             </table>
           </div>
         </div>
-
-        <!-- <div class="col-sm-3">
-          <div class="inputBox focus" style="display:flex;">
-            <div class="inputText">Cant</div>
-              <input type="number" placeholder="nº" name="usuario_receptor" value="" class="input">
-          </div>
-        </div>
-
-        <div class="col-sm-3">
-          <div class="inputBox focus">
-            <div class="inputText">Código</div>
-            <input type="text" name="usuario_equipo" placeholder="Ingrese el código" required class="input">
-          </div>
-        </div>
-
-        <div class="col-sm-3">
-          <div class="inputBox focus">
-            <div class="inputText">Descripción</div>
-            <input type="text" name="mecanico_asignado" placeholder="Ingrese la descripción" required class="input">
-          </div>
-        </div>
-
-        <div class="col-sm-3">
-          <div class="inputBox focus">
-            <div class="inputText">Procedencia</div>
-            <input type="text" name="mecanico_asignado" placeholder="Ingrese la procedencia" required class="input">
-          </div>
-        </div>
-        
-        <div class="col-sm-3">
-          <div class="inputBox focus">
-            <div class="inputText">Req mant</div>
-            <input type="text" name="mecanico_asignado" placeholder="Req mant. nº" required class="input">
-          </div>
-        </div>
-
-        <div class="col-sm-2">
-          <div class="inputBox focus">
-            <div class="inputText">Precio unitario</div>
-            <input type="text" name="mecanico_asignado" placeholder="Precio unitario" required class="input">
-          </div>
-        </div>
-
-        <div class="col-sm-3">
-          <div class="inputBox focus">
-            <div class="inputText">Precio total</div>
-            <input type="text" name="mecanico_asignado" placeholder="Precio total" required class="input">
-          </div>
-        </div>-->
-
-        
       </div>
 
       <div class="row">
@@ -318,25 +267,25 @@
                   1
                   </td>
                   <td>
-                    <input type="number" min="0" name='cant1'  placeholder='Cantidad' class="form-control"/>
+                    <input type="number" min="0" name='cant_reparaciones1'  placeholder='Cantidad' class="form-control"/>
                   </td>
                   <td>
-                    <input type="text" name='code1' placeholder='Código' class="form-control"/>
+                    <input type="text" name='code_re1' placeholder='Código' class="form-control"/>
                   </td>
                   <td>
-                    <input type="text" name='desc1' placeholder='Descripción' class="form-control"/>
+                    <input type="text" name='desc_re1' placeholder='Descripción' class="form-control"/>
                   </td>
                   <td>
-                    <input type="text" name='proce1' placeholder='Procedencia' class="form-control"/>
+                    <input type="text" name='proce_re1' placeholder='Procedencia' class="form-control"/>
                   </td>
                   <td>
-                    <input type="text" name='reqmant1' placeholder='Req Mant.' class="form-control"/>
+                    <input type="text" name='reqmant_re1' placeholder='Req Mant.' class="form-control"/>
                   </td>
                   <td>
-                    <input type="number" name='preciou1' placeholder='Precio unitario' class="form-control"/>
+                    <input type="number" name='precio_unitario21' placeholder='Precio unitario' class="form-control"/>
                   </td>
                   <td>
-                    <input type="number" min="0" name='preciot1'disabled placeholder='Precio total' class="form-control"/>
+                    <input type="number" min="0" name='precio_total21'disabled placeholder='Precio total' class="form-control"/>
                   </td>
                 </tr>
                 <tr id='addr2'>
@@ -344,25 +293,25 @@
                   2
                   </td>
                   <td>
-                    <input type="number" min="0" name='cant2'  placeholder='Cantidad' class="form-control"/>
+                    <input type="number" min="0" name='cant_reparaciones2'  placeholder='Cantidad' class="form-control"/>
                   </td>
                   <td>
-                    <input type="text" name='code2' placeholder='Código' class="form-control"/>
+                    <input type="text" name='code_re2' placeholder='Código' class="form-control"/>
                   </td>
                   <td>
-                    <input type="text" name='desc2' placeholder='Descripción' class="form-control"/>
+                    <input type="text" name='desc_re2' placeholder='Descripción' class="form-control"/>
                   </td>
                   <td>
-                    <input type="text" name='proce2' placeholder='Procedencia' class="form-control"/>
+                    <input type="text" name='proce_re2' placeholder='Procedencia' class="form-control"/>
                   </td>
                   <td>
-                    <input type="text" name='reqmant2' placeholder='Req Mant.' class="form-control"/>
+                    <input type="text" name='reqmant_re2' placeholder='Req Mant.' class="form-control"/>
                   </td>
                   <td>
-                    <input type="number" min="0" name='preciou2' placeholder='Precio unitario' class="form-control"/>
+                    <input type="number" min="0" name='precio_unitario22' placeholder='Precio unitario' class="form-control"/>
                   </td>
                   <td>
-                    <input type="number" min="0" name='preciot2'disabled placeholder='Precio total' class="form-control"/>
+                    <input type="number" min="0" name='precio_total22'disabled placeholder='Precio total' class="form-control"/>
                   </td>
                 </tr>
                 <tr id='addr3'>
@@ -370,25 +319,25 @@
                   3
                   </td>
                   <td>
-                    <input type="number" min="0" name='cant3'  placeholder='Cantidad' class="form-control"/>
+                    <input type="number" min="0" name='cant_reparaciones3'  placeholder='Cantidad' class="form-control"/>
                   </td>
                   <td>
-                    <input type="text" name='code3' placeholder='Código' class="form-control"/>
+                    <input type="text" name='code_re3' placeholder='Código' class="form-control"/>
                   </td>
                   <td>
-                    <input type="text" name='desc3' placeholder='Descripción' class="form-control"/>
+                    <input type="text" name='desc_re3' placeholder='Descripción' class="form-control"/>
                   </td>
                   <td>
-                    <input type="text" name='proce3' placeholder='Procedencia' class="form-control"/>
+                    <input type="text" name='proce_re3' placeholder='Procedencia' class="form-control"/>
                   </td>
                   <td>
-                    <input type="text" name='reqmant3' placeholder='Req Mant.' class="form-control"/>
+                    <input type="text" name='reqmant_re3' placeholder='Req Mant.' class="form-control"/>
                   </td>
                   <td>
-                    <input type="number" min="0" name='preciou3' placeholder='Precio unitario' class="form-control"/>
+                    <input type="number" min="0" name='precio_unitario23' placeholder='Precio unitario' class="form-control"/>
                   </td>
                   <td>
-                    <input type="number" min="0" name='preciot3'disabled placeholder='Precio total' class="form-control"/>
+                    <input type="number" min="0" name='precio_total23'disabled placeholder='Precio total' class="form-control"/>
                   </td>
                 </tr>
                 <tr id='addr4'>
@@ -396,25 +345,25 @@
                   4
                   </td>
                   <td>
-                    <input type="number" min="0" name='cant4'  placeholder='Cantidad' class="form-control"/>
+                    <input type="number" min="0" name='cant_reparaciones4'  placeholder='Cantidad' class="form-control"/>
                   </td>
                   <td>
-                    <input type="text" name='code4' placeholder='Código' class="form-control"/>
+                    <input type="text" name='code_re4' placeholder='Código' class="form-control"/>
                   </td>
                   <td>
-                    <input type="text" name='desc4' placeholder='Descripción' class="form-control"/>
+                    <input type="text" name='desc_re4' placeholder='Descripción' class="form-control"/>
                   </td>
                   <td>
-                    <input type="text" name='proce4' placeholder='Procedencia' class="form-control"/>
+                    <input type="text" name='proce_re4' placeholder='Procedencia' class="form-control"/>
                   </td>
                   <td>
-                    <input type="text" name='reqmant4' placeholder='Req Mant.' class="form-control"/>
+                    <input type="text" name='reqmant_re4' placeholder='Req Mant.' class="form-control"/>
                   </td>
                   <td>
-                    <input type="number" min="0" name='preciou4' placeholder='Precio unitario' class="form-control"/>
+                    <input type="number" min="0" name='precio_unitario24' placeholder='Precio unitario' class="form-control"/>
                   </td>
                   <td>
-                    <input type="number" min="0" name='preciot4'disabled placeholder='Precio total' class="form-control"/>
+                    <input type="number" min="0" name='precio_total24'disabled placeholder='Precio total' class="form-control"/>
                   </td>
                 </tr>
                 <tr id='addr5'>
@@ -422,25 +371,25 @@
                   5
                   </td>
                   <td>
-                    <input type="number" min="0" name='cant5'  placeholder='Cantidad' class="form-control"/>
+                    <input type="number" min="0" name='cant_reparaciones5'  placeholder='Cantidad' class="form-control"/>
                   </td>
                   <td>
-                    <input type="text" name='code5' placeholder='Código' class="form-control"/>
+                    <input type="text" name='code_re5' placeholder='Código' class="form-control"/>
                   </td>
                   <td>
-                    <input type="text" name='desc5' placeholder='Descripción' class="form-control"/>
+                    <input type="text" name='desc_re5' placeholder='Descripción' class="form-control"/>
                   </td>
                   <td>
-                    <input type="text" name='proce5' placeholder='Procedencia' class="form-control"/>
+                    <input type="text" name='proce_re5' placeholder='Procedencia' class="form-control"/>
                   </td>
                   <td>
-                    <input type="text" name='reqmant5' placeholder='Req Mant.' class="form-control"/>
+                    <input type="text" name='reqmant_re5' placeholder='Req Mant.' class="form-control"/>
                   </td>
                   <td>
-                    <input type="number" min="0" name='preciou5' placeholder='Precio unitario' class="form-control"/>
+                    <input type="number" min="0" name='precio_unitario25' placeholder='Precio unitario' class="form-control"/>
                   </td>
                   <td>
-                    <input type="number" min="0" name='preciot5'disabled placeholder='Precio total' class="form-control"/>
+                    <input type="number" min="0" name='precio_total25'disabled placeholder='Precio total' class="form-control"/>
                   </td>
                 </tr>
                 <tr id='addr6'>
@@ -454,7 +403,7 @@
                     <h6>Total</h6>
                   </td>
                   <td>
-                    <input type="number" min="0" name='total' disabled placeholder='Precio total' class="form-control"/>
+                    <input type="number" min="0" name='total_reparaciones' disabled placeholder='Precio total' class="form-control"/>
                   </td>
                 </tr>
               </tbody>
@@ -467,29 +416,59 @@
         <div class="col-sm-12">
           <div class="inputBox focus">
             <div class="inputText">Observación</div>
-            <textarea required name="descripcion_falla" class="input"></textarea>
+            <textarea required name="observacion" class="input"></textarea>
           </div>
         </div>
       </div>
 
+      <?php echo "<input type='text' name='id_orden' style='display:none' value='$id_orden' >"; ?>
+
       <div class="row">
-        <div class="col-sm-12">
-          <input type="submit" name="" class="button" value="Responder orden">
+        <div class="col-sm-6">
+          <input type="submit" name="" class="btn btn-success" value="Responder orden">
+        </div>
+        <div class="col-sm-6">
+          <?php echo"<a href='index.php?art=declineorder&id=$id_orden' class='btn btn-danger'>Rechazar orden </a>"; ?>
         </div>
       </div>
     </form>
   </div>
 </div>
 
-
 <script>
+  const attr = ['cant_repuesto', 'precio_unitario', 'cant_reparaciones', 'precio_unitario2'];
+  const different = [
+    {
+      name: 'cant_repuesto',
+      price: 'precio_unitario',
+      totalPrice: 'precio_total',
+      total: 0
+    }, 
+    {
+      name: 'cant_reparaciones',
+      price:'precio_unitario2',
+      totalPrice: 'precio_total2',
+      total: 0
+    }
+  ];
 
-  $(document).ready(function(){
-    $('.form-control:first-child').on('change', function(e) {
-      var cantidad = $(this).parents("tr").find("td").eq(1).val();
-      console.log($('input[name=cant1]').val())
-    })
-  });
+  function calculate(e) {
+    let totalPriceRepuesto = 0, totalPriceReparacion = 0;
+    
+    for(let i = 1; i <= 5; i++) 
+      different.forEach(({name, price, totalPrice}, j) => {
+        let quantity = document.getElementsByName(name + i)[0].value,
+            precioUnitario = document.getElementsByName(price + i)[0].value,
+            precioTotal = parseInt(quantity) * parseFloat(precioUnitario);
+          document.getElementsByName(totalPrice + i)[0].value = precioTotal;
+          different[j].total += precioTotal ? precioTotal : 0;
+      })
+
+    document.getElementsByName('total_repuestos')[0].value = different[0].total;
+    document.getElementsByName('total_reparaciones')[0].value = different[1].total;
+  }
+
+  for(let i = 1; i <= 5; i++ )
+    attr.forEach(name => document.getElementsByName(name + i)[0].addEventListener("change", calculate))
+
 </script>
-
-<div class="row clearfix" style="height: 5vh"></div>

@@ -49,9 +49,16 @@ error_reporting(E_ERROR | E_PARSE);
           echo "<td>$hora_reporte</td>";
           echo "<td>$unidad_equipo</td>";
           echo "<td>$estado_orden</td>";
-          echo "<td>
-            <a href='index.php?art=responderorden&id=$id_orden'><button class='btn btn-success'>Responder</button></a>
-          </td>";
+          if($estado_orden === 'Pendiente') {
+            echo "<td>
+              <a href='index.php?art=responderorden&id=$id_orden'><button class='btn btn-success'>Responder</button></a>
+            </td>";
+          }
+          else {
+            echo "<td>
+              <a href='index.php?art=responderorden&id=$id_orden'><button class='btn btn-success'>Actualizar</button></a>
+            </td>";
+          }
             
       }
 

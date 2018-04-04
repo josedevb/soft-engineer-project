@@ -93,8 +93,8 @@
 					include_once('aprobar.php');
 				}
 				$Articulo = $_GET['art'];
-				if ( $Articulo == rechazar ) {
-					include_once('rechazar.php');
+				if ( $Articulo == declineorder ) {
+					include_once('declineorder.php');
 				}
 			?>
 		</article>
