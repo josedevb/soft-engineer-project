@@ -7,7 +7,7 @@
   $observacion = $_POST['observacion'];
 
   for($i = 1; $i <= 10; $i++)
-    if($_POST['reparacion'.$i])
+    if($_POST['reparacion'.$i]){
       $reparacion = $_POST['reparacion'.$i];
       $mysqli-> query(
         " INSERT INTO reparaciones_realizadas(
@@ -17,6 +17,7 @@
           values (null, '$reparacion' $id_orden)
         "
       );
+    }
   
   for($i = 5; $i <= 5; $i++) {
     if($_POST['cant_repuesto'.$i]) {
