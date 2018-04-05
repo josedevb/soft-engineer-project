@@ -18,7 +18,7 @@
       ) or die($mysqli->error);
     }
   
-  for($i = 5; $i <= 5; $i++) {
+  for($i = 1; $i <= 5; $i++) {
     if($_POST['cant_repuesto'.$i]) {
       $cant = $_POST['cant_repuesto'.$i];
       $code = $_POST['code'.$i];
@@ -36,7 +36,7 @@
             req_mant_no,
             precio_unit,
             precio_total,
-            id_orden )
+            id_orden)
           values ($cant, '$code', '$desc', '$proce', '$reqmant', $precio_unitario, $precio_total, $id_orden)
         "
       ) or die($mysqli->error);
@@ -87,5 +87,5 @@
 
   $mysqli->query("UPDATE ordenes set estado_orden = 'Aprobado' where id_orden=$id_orden");
 
-  //header("Location: index.php?art=adminsolicitudes");
+  header("Location: index.php?art=adminsolicitudes");
 ?>

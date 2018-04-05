@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 05-04-2018 a las 02:39:33
+-- Tiempo de generación: 05-04-2018 a las 02:48:17
 -- Versión del servidor: 10.1.8-MariaDB
 -- Versión de PHP: 5.6.14
 
@@ -103,6 +103,15 @@ CREATE TABLE `reparaciones` (
   `id_orden` int(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Volcado de datos para la tabla `reparaciones`
+--
+
+INSERT INTO `reparaciones` (`id_reparacion`, `cantidad`, `codigo`, `descripcion`, `procedencia`, `req_mant_no`, `precio_unit`, `precio_total`, `id_orden`) VALUES
+(1, 1, 'code', 'desc', 'proce', 'reqmant', 1, 1, 1),
+(2, 2, '22', '22', '2', '2', 2, 4, 1),
+(3, 2, '2', '2', '2', '2', 2, 4, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -115,6 +124,24 @@ CREATE TABLE `reparaciones_realizadas` (
   `id_orden` int(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Volcado de datos para la tabla `reparaciones_realizadas`
+--
+
+INSERT INTO `reparaciones_realizadas` (`id_reparacion`, `descripcion`, `id_orden`) VALUES
+(1, 'sdf', 1),
+(2, 'asdf', 1),
+(3, 'asd', 1),
+(4, 'asd', 1),
+(5, 'asd', 1),
+(6, 'asd', 1),
+(7, 'asd', 1),
+(8, 'asd', 1),
+(9, 'asd', 1),
+(10, 'asd', 1),
+(11, 'asd', 1),
+(12, 'asd', 1);
+
 -- --------------------------------------------------------
 
 --
@@ -126,11 +153,20 @@ CREATE TABLE `repuestos` (
   `cantidad` int(100) NOT NULL,
   `codigo` int(100) NOT NULL,
   `descripcion` int(100) NOT NULL,
+  `procedencia` varchar(200) NOT NULL,
   `req_mant_no` varchar(100) NOT NULL,
   `precio_unit` int(100) NOT NULL,
   `precio_total` int(100) NOT NULL,
   `id_orden` int(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `repuestos`
+--
+
+INSERT INTO `repuestos` (`id_repuesto`, `cantidad`, `codigo`, `descripcion`, `procedencia`, `req_mant_no`, `precio_unit`, `precio_total`, `id_orden`) VALUES
+(0, 2, 2, 2, '2', '2', 2, 4, 1),
+(0, 2, 2, 2, '2', '2', 2, 4, 1);
 
 -- --------------------------------------------------------
 
@@ -148,6 +184,18 @@ CREATE TABLE `respuesta` (
   `fecha_respuesta` varchar(50) NOT NULL,
   `hora_respuesta` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `respuesta`
+--
+
+INSERT INTO `respuesta` (`id_respuesta`, `id_orden`, `observacion`, `monto_repuesto`, `monto_reparaciones`, `total_facturado`, `fecha_respuesta`, `hora_respuesta`) VALUES
+(0, 1, '2', 12, 4, 8, '18-04-05', '02:37:37'),
+(0, 1, '123', 20, 4, 8, '18-04-05', '02:43:08'),
+(0, 1, 'asdasd', 20, 44, 88, '18-04-05', '02:45:17'),
+(0, 1, 'asdasd', 20, 44, 88, '18-04-05', '02:46:18'),
+(0, 1, 'asdasd', 20, 44, 88, '18-04-05', '02:46:21'),
+(0, 1, 'asdasd', 48, 12, 24, '18-04-05', '02:46:59');
 
 -- --------------------------------------------------------
 
@@ -224,12 +272,12 @@ ALTER TABLE `ordenes`
 -- AUTO_INCREMENT de la tabla `reparaciones`
 --
 ALTER TABLE `reparaciones`
-  MODIFY `id_reparacion` int(100) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_reparacion` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT de la tabla `reparaciones_realizadas`
 --
 ALTER TABLE `reparaciones_realizadas`
-  MODIFY `id_reparacion` int(50) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_reparacion` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --
