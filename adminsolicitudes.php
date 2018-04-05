@@ -56,7 +56,7 @@ error_reporting(E_ERROR | E_PARSE);
           }
           else {
             echo "<td>
-              <a href='index.php?art=responderorden&id=$id_orden'><button class='btn btn-success'>Actualizar</button></a>
+              <a href='index.php?art=updateorden&id=$id_orden'><button class='btn btn-success'>Actualizar</button></a>
             </td>";
           }
             

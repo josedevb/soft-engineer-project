@@ -84,8 +84,8 @@
 				}
 
 				$Articulo = $_GET['art'];
-				if ( $Articulo == modificar ) {
-					include_once('modificar.php');
+				if ( $Articulo == updateorden ) {
+					include_once('updateorden.php');
 				}
 
 				$Articulo = $_GET['art'];
