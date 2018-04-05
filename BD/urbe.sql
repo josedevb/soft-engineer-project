@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.7
--- https://www.phpmyadmin.net/
+-- version 4.5.1
+-- http://www.phpmyadmin.net
 --
--- Servidor: localhost
--- Tiempo de generación: 04-04-2018 a las 23:08:13
--- Versión del servidor: 10.1.30-MariaDB
--- Versión de PHP: 7.2.2
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 05-04-2018 a las 02:39:33
+-- Versión del servidor: 10.1.8-MariaDB
+-- Versión de PHP: 5.6.14
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -147,7 +145,7 @@ CREATE TABLE `respuesta` (
   `monto_repuesto` double NOT NULL,
   `monto_reparaciones` double NOT NULL,
   `total_facturado` double NOT NULL,
-  `fecha_repuesta` varchar(50) NOT NULL,
+  `fecha_respuesta` varchar(50) NOT NULL,
   `hora_respuesta` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -217,32 +215,26 @@ ALTER TABLE `usuario`
 --
 ALTER TABLE `datospersonales`
   MODIFY `id_persona` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
 --
 -- AUTO_INCREMENT de la tabla `ordenes`
 --
 ALTER TABLE `ordenes`
   MODIFY `id_orden` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
 --
 -- AUTO_INCREMENT de la tabla `reparaciones`
 --
 ALTER TABLE `reparaciones`
   MODIFY `id_reparacion` int(100) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT de la tabla `reparaciones_realizadas`
 --
 ALTER TABLE `reparaciones_realizadas`
   MODIFY `id_reparacion` int(50) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
   MODIFY `idusuario` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-COMMIT;
-
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

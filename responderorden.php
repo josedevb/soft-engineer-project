@@ -453,14 +453,14 @@
   ];
 
   function calculate(e) {
-    let totalPriceRepuesto = 0, totalPriceReparacion = 0;
+    var totalPriceRepuesto = 0, totalPriceReparacion = 0;
     
-    for(let i = 1; i <= 5; i++) 
-      different.forEach(({name, price, totalPrice}, j) => {
-        let quantity = document.getElementsByName(name + i)[0].value,
-            precioUnitario = document.getElementsByName(price + i)[0].value,
+    for(var i = 1; i <= 5; i++) 
+      different.forEach(function(obj, j) {
+        var quantity = document.getElementsByName(obj.name + i)[0].value,
+            precioUnitario = document.getElementsByName(obj.price + i)[0].value,
             precioTotal = parseInt(quantity) * parseFloat(precioUnitario);
-          document.getElementsByName(totalPrice + i)[0].value = precioTotal;
+          document.getElementsByName(obj.totalPrice + i)[0].value = precioTotal;
           different[j].total += precioTotal ? precioTotal : 0;
       })
 
@@ -468,7 +468,7 @@
     document.getElementsByName('total_reparaciones')[0].value = different[1].total;
   }
 
-  for(let i = 1; i <= 5; i++ )
+  for(var i = 1; i <= 5; i++ )
     attr.forEach(name => document.getElementsByName(name + i)[0].addEventListener("change", calculate))
 
 </script>
