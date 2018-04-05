@@ -62,7 +62,7 @@ error_reporting(E_ERROR | E_PARSE);
                 </td>";
           else 
             echo  "<a href='index.php?art=reactivateorder&id=$id_orden'>
-                      <button class='btn btn-danger'>Reactivar</button>
+                      <button class='btn btn-success'>Reactivar</button>
                     </a>
                   </td>";
             
