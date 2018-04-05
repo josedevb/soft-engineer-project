@@ -51,11 +51,21 @@ error_reporting(E_ERROR | E_PARSE);
           echo "<td>$hora_reporte</td>";
           echo "<td>$unidad_equipo</td>";
           echo "<td>$estado_orden</td>";
-          /*echo "<td>
-                  <a href='index.php?art=editar&id=$id'><button class='btn btn-success'>Aprobar </button></a>
-                  <a href='index.php?art=eliminar&id=$id'><button class='btn btn-danger'>Rechazar </button></a>
-            </td>";
-            */
+          echo "<td>
+                  <a href='index.php?art=editar&id=$id_orden'>
+                    <button class='btn btn-primary'>Editar</button>
+                  </a>";
+          if($estado_orden !== 'Cancelada')
+            echo  "<a href='index.php?art=declineorder&id=$id_orden&operator=true'>
+                    <button class='btn btn-success'>Cancelar</button>
+                  </a>
+                </td>";
+          else 
+            echo  "<a href='index.php?art=reactivateorder&id=$id_orden'>
+                      <button class='btn btn-danger'>Reactivar</button>
+                    </a>
+                  </td>";
+            
       }
 
      echo "</tr>";

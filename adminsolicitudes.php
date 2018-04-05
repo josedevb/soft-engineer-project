@@ -39,7 +39,7 @@ error_reporting(E_ERROR | E_PARSE);
         $hora_reporte=$fila['hora_reporte'];
         $unidad_equipo=$fila['unidad_equipo'];
         $estado_orden = $fila['estado_orden'];
-
+        if($estado_orden !== 'Cancelada') {
           echo "<tr>";
           echo "<td>$id_orden</td>";
           echo "<td>$tipo_mantenimiento</td>";
@@ -51,15 +51,15 @@ error_reporting(E_ERROR | E_PARSE);
           echo "<td>$estado_orden</td>";
           if($estado_orden === 'Pendiente') {
             echo "<td>
-              <a href='index.php?art=responderorden&id=$id_orden'><button class='btn btn-success'>Responder</button></a>
-            </td>";
+                    <a href='index.php?art=responderorden&id=$id_orden'><button class='btn btn-success'>Responder</button></a>
+                  </td>";
           }
           else {
             echo "<td>
-              <a href='index.php?art=updateorden&id=$id_orden'><button class='btn btn-success'>Actualizar</button></a>
-            </td>";
+                    <a href='index.php?art=updateorden&id=$id_orden'><button class='btn btn-success'>Actualizar</button></a>
+                  </td>";
           }
-            
+        } 
       }
 
      echo "</tr>";
