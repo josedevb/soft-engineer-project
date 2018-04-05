@@ -73,7 +73,8 @@
       monto_reparaciones,
       total_facturado,
       fecha_respuesta,
-      hora_respuesta)
+      hora_respuesta,
+      tipo)
       VALUES (  
         $id_orden, 
         '$observacion', 
@@ -81,7 +82,8 @@
         $total_reparaciones, 
         $total_facturado,
         '$fecha_ahora',
-        '$hora_ahora')
+        '$hora_ahora',
+        'Respuesta')
     "
   ) or die($mysqli->error);
 
