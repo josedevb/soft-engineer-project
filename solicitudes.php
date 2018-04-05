@@ -57,7 +57,7 @@ error_reporting(E_ERROR | E_PARSE);
                   </a>";
           if($estado_orden !== 'Cancelada')
             echo  "<a href='index.php?art=declineorder&id=$id_orden&operator=true'>
-                    <button class='btn btn-success'>Cancelar</button>
+                    <button class='btn btn-danger'>Cancelar</button>
                   </a>
                 </td>";
           else 
