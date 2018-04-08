@@ -14,12 +14,13 @@
 	 }
 	 if (isset($_SESSION['usuario']))
 		   if ($id == 1) {
-        echo "<a href='index.php?art=adminsolicitudes'><div class='col-md-6'><h3><i class='far fa-file-alt'></i>Responder ordenes</h3></div></a>";
+				echo "<a href='index.php?art=adminsolicitudes'><div class='col-md-6'><h3><i class='far fa-file-alt'></i>Responder ordenes</h3></div></a>";
+				echo "<a href='index.php?art=modificar&id=$id'><div class='col-md-4'><h3><i class='fas fa-users'></i>Reporte de ordenes</h3></div></a>";
         echo "<a href='index.php?art=salir'><div class='col-md-6'><h3><i class='fas fa-sign-out-alt'></i>Desconectarse</h3></div></a>";
 		   }
 		   else {
         echo "<a href='index.php?art=solicitudes&id=$id'><div class='col-md-6'><h3><i class='far fa-file-alt'></i>Lista de ordenes</h3></div></a>";
-        //echo "<a href='index.php?art=modificar&id=$id'><div class='col-md-4'><h3><i class='fas fa-users'></i>Lista de usuarios</h3></div></a>";
+        echo "<a href='index.php?art=modificar&id=$id'><div class='col-md-4'><h3><i class='fas fa-users'></i>Reporte de ordenes</h3></div></a>";
         echo "<a href='index.php?art=salir'><div class='col-md-6'><h3><i class='fas fa-sign-out-alt'></i>Desconectarse</h3></div></a>";
 		   }
 		    else
