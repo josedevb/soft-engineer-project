@@ -5,7 +5,7 @@
 ?>
 <div class="container-fluid">
   <div class="formBox">
-    <form name="createorder_form" action="createorder.php" method="post" class="form">
+    <form name="createorder_form" action="createorder.php" onsubmit="return validateForm()" method="post" class="form">
       <div class="row">
         <div class="col-sm-12">
           <h2>Nueva orden</h2>
@@ -59,7 +59,7 @@
         <div class="col-sm-4">
           <div class="inputBox focus">
             <div class="inputText ">Fecha reporte</div>
-            <input type="date" required name="fecha_reporte" class="input">
+            <input type="text" placeholder='YYYY-MM-DD' pattern="(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31))" required name="fecha_reporte" class="input">
           </div>
         </div>
 
@@ -73,7 +73,14 @@
         <div class="col-sm-4">
           <div class="inputBox focus">
             <div class="inputText">Fecha inicio</div>
-            <input type="date" name="fecha_inicio" class="input">
+            <input 
+              type="text" 
+              placeholder='YYYY-MM-DD' 
+              pattern="(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31))" 
+              name="fecha_inicio" class="input"
+              required
+              id="fechaInicioOrden"
+            >
           </div>
         </div>
 
@@ -87,7 +94,14 @@
         <div class="col-sm-4">
           <div class="inputBox focus">
             <div class="inputText">Fecha culminación</div>
-            <input type="date" required name="fecha_culminacion" class="input">
+            <input 
+              type="text" 
+              required placeholder='YYYY-MM-DD' 
+              pattern="(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31))" 
+              name="fecha_culminacion" 
+              class="input"
+              id="fechaCulminacionOrden"
+            >
           </div>
         </div>
 
@@ -147,14 +161,29 @@
         <div class="col-sm-3">
           <div class="inputBox focus">
             <div class="inputText">Fecha de inicio</div>
-            <input type="date" required name="fecha_inicio_taller" class="input">
+            <input 
+              type="text" 
+              required 
+              placeholder='YYYY-MM-DD'
+              pattern="(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31))" 
+              name="fecha_inicio_taller" 
+              class="input"
+              id="fechaInicioTaller"
+            >
           </div>
         </div>
 
         <div class="col-sm-3">
           <div class="inputBox focus">
             <div class="inputText">Fecha culminación</div>
-            <input type="date" required name="fecha_culminacion_taller" class="input">
+            <input 
+              type="text" 
+              required placeholder='YYYY-MM-DD' 
+              pattern="(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31))" 
+              name="fecha_culminacion_taller"
+              class="input"
+              id="fechaCulminacionTaller"
+            >
           </div>
         </div>
 
@@ -192,3 +221,14 @@
 </div>
 
 <div class="row clearfix" style="height: 5vh"></div>
+<script>
+  function validateForm() {
+    var fechaInicioOrden =  document.getElementById('fechaInicioOrden').value;
+    var fechaCulminacionOrder =  document.getElementById('fechaCulminacionOrden').value;
+    var fechaInicioTaller = document.getElementById('fechaInicioTaller').value;
+    var fechaCulminacionTaller = document.getElementById('fechaCulminacionTaller').value;
+    if(fechaInicioOrden <= fechaCulminacionOrder && fechaInicioTaller <= fechaFinalTaller) return true;
+    alert("Las fechas de culminación deben ser mayores a las fechas de inicio");
+    return false;
+  }
+</script>

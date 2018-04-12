@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.7
+-- version 4.7.9
 -- https://www.phpmyadmin.net/
 --
--- Servidor: localhost
--- Tiempo de generación: 05-04-2018 a las 22:28:39
--- Versión del servidor: 10.1.30-MariaDB
--- Versión de PHP: 7.2.2
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 12-04-2018 a las 23:41:31
+-- Versión del servidor: 10.1.31-MariaDB
+-- Versión de PHP: 7.2.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -79,14 +79,6 @@ CREATE TABLE `ordenes` (
   `estado_orden` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Volcado de datos para la tabla `ordenes`
---
-
-INSERT INTO `ordenes` (`id_orden`, `id_usuario_emisor`, `id_usuario_receptor`, `tipo_mantenimiento`, `usuario_equipo`, `mecanico_asignado`, `fecha_reporte`, `hora_reporte`, `fecha_inicio`, `hora_inicio`, `fecha_culminacion`, `hora_culminacion`, `km`, `unidad_equipo`, `placa_equipo`, `ultima_actividad`, `taller_externo`, `fecha_inicio_taller`, `fecha_culminacion_taller`, `hora_taller`, `garantia`, `descripcion_falla`, `estado_orden`) VALUES
-(1, 1, 2, 'preventivo', 'Jose B', 'mecanico 2', '0012-12-21', '12:12', '0212-11-12', '12:12', '1212-01-12', '12:12', 121, '12:12', 'placa 1', 'asd', 'asdasd', '1123-02-11', '0012-12-12', '11:02', 'garantizado', 'falla en la bomba', 'Aprobado'),
-(2, 1, 2, 'predictivo', 'Anthony', 'mecanico 3', '0012-12-21', '12:12', '0212-11-12', '12:12', '1212-01-12', '12:12', 200, '12:12', 'placa 2', 'actividad 3', 'taller2', '1123-02-11', '0012-12-12', '11:02', 'garantizado', 'falla en la bomba nueva', 'Aprobado');
-
 -- --------------------------------------------------------
 
 --
@@ -105,16 +97,6 @@ CREATE TABLE `reparaciones` (
   `id_orden` int(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Volcado de datos para la tabla `reparaciones`
---
-
-INSERT INTO `reparaciones` (`id_reparacion`, `cantidad`, `codigo`, `descripcion`, `procedencia`, `req_mant_no`, `precio_unit`, `precio_total`, `id_orden`) VALUES
-(1, 123, '1f', '1sdfsdf', '1sdfsdf', '1dfsgsd', 13, 1599, 1),
-(2, 23, '2ssdf', 'sddsdf', '2fsdf', '2dfg', 2312, 53176, 1),
-(3, 543, '3sdfsfsdf', 'fsdds', '3sdfsd', 'fgd3sdfg', 3213, 1744659, 1),
-(4, 12346, 'sdfsdf4', '4sdf', '4fsdf', 'sfgdfg4', 123, 1518558, 1);
-
 -- --------------------------------------------------------
 
 --
@@ -126,13 +108,6 @@ CREATE TABLE `reparaciones_realizadas` (
   `descripcion` varchar(200) NOT NULL,
   `id_orden` int(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `reparaciones_realizadas`
---
-
-INSERT INTO `reparaciones_realizadas` (`id_reparacion`, `descripcion`, `id_orden`) VALUES
-(1, 'mantequilla1', 1);
 
 -- --------------------------------------------------------
 
@@ -152,17 +127,6 @@ CREATE TABLE `repuestos` (
   `id_orden` int(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Volcado de datos para la tabla `repuestos`
---
-
-INSERT INTO `repuestos` (`id_repuesto`, `cantidad`, `codigo`, `descripcion`, `procedencia`, `req_mant_no`, `precio_unit`, `precio_total`, `id_orden`) VALUES
-(1, 10, 'code1', 'desc1', 'proce1', 'reqmant1', 10, 100, 1),
-(2, 20, 'code2', 'desc2', 'proce2', 'reqmant2', 20, 400, 1),
-(3, 30, 'code3', '3', '3', '3', 3, 90, 1),
-(4, 40, 'code4', '4', '4', '4', 4, 160, 1),
-(5, 50, 'code5', '5', '5', '5', 5, 250, 1);
-
 -- --------------------------------------------------------
 
 --
@@ -180,18 +144,6 @@ CREATE TABLE `respuesta` (
   `hora_respuesta` varchar(50) NOT NULL,
   `tipo` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `respuesta`
---
-
-INSERT INTO `respuesta` (`id_respuesta`, `id_orden`, `observacion`, `monto_repuesto`, `monto_reparaciones`, `total_facturado`, `fecha_respuesta`, `hora_respuesta`, `tipo`) VALUES
-(1, 1, 'observer', 55, 970, 1940, '18-04-05', '22:23:13', 'ActualizaciÃ³n'),
-(2, 1, 'observer', 70, 55, 110, '18-04-05', '22:24:09', 'ActualizaciÃ³n'),
-(3, 1, 'observer', 70, 85, 170, '18-04-05', '22:24:30', 'ActualizaciÃ³n'),
-(4, 1, 'observer', 1000, 85, 170, '18-04-05', '22:25:39', 'ActualizaciÃ³n'),
-(5, 1, 'observer', 1000, 66571673, 133143346, '18-04-05', '22:26:11', 'ActualizaciÃ³n'),
-(6, 1, 'observer', 1000, 3317992, 6635984, '18-04-05', '22:26:31', 'ActualizaciÃ³n');
 
 -- --------------------------------------------------------
 
@@ -276,31 +228,31 @@ ALTER TABLE `datospersonales`
 -- AUTO_INCREMENT de la tabla `ordenes`
 --
 ALTER TABLE `ordenes`
-  MODIFY `id_orden` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_orden` int(20) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `reparaciones`
 --
 ALTER TABLE `reparaciones`
-  MODIFY `id_reparacion` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_reparacion` int(100) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `reparaciones_realizadas`
 --
 ALTER TABLE `reparaciones_realizadas`
-  MODIFY `id_reparacion` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_reparacion` int(50) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `repuestos`
 --
 ALTER TABLE `repuestos`
-  MODIFY `id_repuesto` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_repuesto` int(50) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `respuesta`
 --
 ALTER TABLE `respuesta`
-  MODIFY `id_respuesta` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_respuesta` int(50) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`

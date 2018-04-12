@@ -147,9 +147,7 @@ footer a, footer a:link {
 	  echo "<form action='control.php' class='login' name='autentification_form' method='post'>";
     echo "  <p class='title'>Ingrese sus datos</p> ";
 	  echo "  <input name='usuario' required type='text' id='usuario' placeholder='Usuario' value='' autofocus/>";
-	  echo "  <i class='fa fa-user'></i>";
 	  echo "  <input type='password' required name='clave' type='password' id='clave' placeholder='Contraseña' />";
-	  echo "  <i class='fa fa-key'></i>";
 	  echo "  <button type name='BtnEnviar' class='btn btn-primary' type='submit' id='BtnEnviar' value='Enviar'>";
 	  echo "    <i class='spinner'></i>";
 	  echo "    <span class='state'>Enviar</span>";
